@@ -20,7 +20,8 @@ void dwim(const color c) {
   }
 }
 
-int main(int argc, char* argv[]) {
+//int main(int argc, char* argv[]) {
+int main() {	//it works anyway
   color opt = red;
   // opt = 3; // cannot assign int to enum
   int a = opt;  // but they implicitly converts to integers

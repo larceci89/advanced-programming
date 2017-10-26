@@ -1,6 +1,11 @@
 #include <iostream>
 #include <string>
 
+/*	Here we specify the class Vector, plus all the operations that one can
+	do on an element of that class.
+	In main, we initialize v as element of this class. Then, in the class,
+	info about the initialization, deletion, operations are given.
+*/
 class Vector {
   double* elem;
   unsigned int _size;

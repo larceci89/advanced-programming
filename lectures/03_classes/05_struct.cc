@@ -1,3 +1,7 @@
+/*	structs and classes are almost equivalent: the formers are public,
+	while the latters are private (unless otherwise specified).
+	Common use is to employ structs for blocks of data, and classes to
+	implement customized functions. */
 #include <iostream>
 
 struct Point_s {
