@@ -68,6 +68,7 @@ int main() {
   std::cout << "\nv2.deep_copy();\n";
   std::cout << "v2.deep_copy();\n";
   std::cout << "v1[6] = 77;\n";
+
 //with deepcopy, v1 and v2 point to different addresses
   v2.deep_copy();
   v2.deep_copy();

@@ -1,5 +1,6 @@
 //b=std::move(a) allows the swap of two arrays without further memory allocation:
 //a is copied in b and a remains unemployable, although we can use a = std::move(a), to finish the swap
+
 #include <iostream>
 #include <memory>
 #include "../04_error_handling/ap_error.h"
