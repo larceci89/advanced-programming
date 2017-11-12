@@ -1,3 +1,8 @@
+/* I guess the purpose of this file is to show that raw pointers are sometimes
+   unconvenient: look at all the lines where we have to place the same delete
+   statements (indicated by // <---- ).
+   It is much better to use SMART POINTERS, i.e. pointers which are deallocated
+   automatically whatever happens. */
 #include <iostream>
 #include <vector>
 
@@ -36,9 +41,10 @@ class ManyResources {
   ManyResources() : ptr{nullptr}, v{3} {
     std::cout << "Manyresources\n";
     try {
-      // AP_error("Error in ManyResources ctor\n"); // what happens here?
-      ptr = new double[5];  // new(std::nothrow) double[5] could be better
-      AP_error("Error in ManyResources ctor\n");
+       AP_error("Error in ManyResources ctor\n"); // what happens here?
+      ptr = new double[5];
+//      new(std::nothrow) double[5]; // could be better
+//      AP_error("Error in ManyResources ctor\n");
     } catch (...) {
       delete[] ptr;  // <----
       throw;

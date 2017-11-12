@@ -1,3 +1,5 @@
+// Define a smart pointer via the std::unique_ptr function.
+// No need to write delete statements!
 #include <iostream>
 #include <memory>
 
