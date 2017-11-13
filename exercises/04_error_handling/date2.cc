@@ -1,3 +1,9 @@
+/* about error handling:
+	get_date() provides checks on input and throws errors until a good input is given.
+	Still, one can enter a day not compatible with a certain month, say 31-11-****.
+	This is done to test the function check_Date(), which uses "assert" to check this incompatibilities.
+	
+	It would be nice to put the check inside the constructor or somewhere in the class... */
 #include <iostream>
 #include <string>
 #include <assert.h>
@@ -8,7 +14,6 @@ class Date{
 	unsigned int day;
 	monthtype month;
 	unsigned int year;
-
 public:
 	//constructor
 	Date(unsigned int _day, unsigned int _month, unsigned int _year) : day{_day} , month{monthtype(_month)} , year{_year} {}
@@ -36,11 +41,8 @@ bool is_leap(const unsigned int y){
 		return false;
 }
 
-//	operation that adds one day at a time
-Date Date::add_oneday(Date date) {
-	unsigned int day = date.fday();
-	monthtype month = date.fmonth();
-	unsigned int year = date.fyear();
+//	determines the number of days in a specific month
+unsigned int fday_threshold( monthtype month, unsigned int year ){
 	unsigned int day_threshold;
 
 	switch (month)
@@ -61,6 +63,19 @@ Date Date::add_oneday(Date date) {
 			day_threshold = 31;
 			break;
 	}
+
+	return day_threshold;
+}
+
+
+//	operation that adds one day at a time
+Date Date::add_oneday(Date date) {
+	unsigned int day = date.fday();
+	monthtype month = date.fmonth();
+	unsigned int year = date.fyear();
+	unsigned int day_threshold;
+
+	day_threshold = fday_threshold(month, year);
 
 	if(day == day_threshold)
 	{
@@ -104,6 +119,19 @@ bool operator != (const Date& lhs, const Date& rhs){
 //	operator that describes how to print a Date element with <<
 std::ostream& operator << (std::ostream& os, const Date& d){
 	return os << d.fday() << "/" << int(d.fmonth()) << "/" << d.fyear();
+}
+
+//	check the validity of Date type
+bool check_Date(Date d){
+	unsigned int day = d.fday();
+	monthtype month = d.fmonth();
+	unsigned int year = d.fyear();
+	unsigned int day_threshold;
+	// if ok, check the day according to the month
+	day_threshold = fday_threshold(month, year);
+	assert(day>=1 && day<=day_threshold);
+
+	return true;
 }
 
 // type that contains the possible input error message
@@ -167,7 +195,6 @@ unsigned int get_date(const unsigned int n){
 
 
 int main() {
-
 	unsigned int dd, mm, yy, numdays;
 	bool flag_stop = true;
 
@@ -177,6 +204,9 @@ int main() {
 	yy = get_date(3);
 
 	Date date(dd,mm,yy);
+	if (!check_Date(date)){
+		std::cout << "Invalid date! Aborting...\n";
+		return 1; }
 
 	// writes the input date, exploiting the "<<" operator defined before
 	std::cout << "You have inserted the date: " << date << std::endl << std::endl;
