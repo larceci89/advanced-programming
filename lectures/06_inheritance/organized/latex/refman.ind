@@ -1,0 +1,46 @@
+\begin{theindex}
+
+  \item {$\sim$\+Animal}
+    \subitem {Animal}, \hyperpage{6}
+
+  \indexspace
+
+  \item {Animal}, \hyperpage{5}
+    \subitem {$\sim$\+Animal}, \hyperpage{6}
+    \subitem {Animal}, \hyperpage{5}
+    \subitem {info}, \hyperpage{6}
+    \subitem {speak}, \hyperpage{6}
+
+  \indexspace
+
+  \item {Dangerous\+Snake}, \hyperpage{6}
+  \item {Dog}, \hyperpage{7}
+    \subitem {Dog}, \hyperpage{7}
+    \subitem {speak}, \hyperpage{8}
+
+  \indexspace
+
+  \item {info}
+    \subitem {Animal}, \hyperpage{6}
+    \subitem {Snake}, \hyperpage{10}
+
+  \indexspace
+
+  \item {Non\+Dangerous\+Snake}, \hyperpage{8}
+
+  \indexspace
+
+  \item {Python}, \hyperpage{9}
+
+  \indexspace
+
+  \item {Snake}, \hyperpage{9}
+    \subitem {info}, \hyperpage{10}
+    \subitem {Snake}, \hyperpage{10}
+    \subitem {speak}, \hyperpage{10}
+  \item {speak}
+    \subitem {Animal}, \hyperpage{6}
+    \subitem {Dog}, \hyperpage{8}
+    \subitem {Snake}, \hyperpage{10}
+
+\end{theindex}

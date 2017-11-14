@@ -1,7 +1,6 @@
 // variables of built-in types are not initializaed by default, for performance reasons
 // it will print a random char
 // however, there are several functions provided by the compiler, without our definition
-
 #include <iostream>
 
 struct X {

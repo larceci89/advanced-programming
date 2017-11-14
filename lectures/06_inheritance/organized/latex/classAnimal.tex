@@ -1,0 +1,84 @@
+\hypertarget{classAnimal}{}\section{Animal Class Reference}
+\label{classAnimal}\index{Animal@{Animal}}
+
+
+{\ttfamily \#include $<$animal.\+h$>$}
+
+Inheritance diagram for Animal\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=4.000000cm]{classAnimal}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classAnimal_aaf54366e9bfa8730f100fd25b99b864f}{Animal} (const unsigned int a, const double w)
+\item 
+\hyperlink{classAnimal_a1e726a49ec952443190ac62dad22353c}{Animal} ()
+\item 
+virtual void \hyperlink{classAnimal_ae3f640ffd5ebec66c3836b63fd11fc27}{speak} () const =0
+\item 
+virtual void \hyperlink{classAnimal_a72994a2bb769667d277845351462246f}{info} () const noexcept
+\item 
+virtual \hyperlink{classAnimal_a16d8b7f94611cc65f5cdb58cc105527b}{$\sim$\+Animal} ()
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Base class for animals. Each new animal should derive from this class and override {\ttfamily \hyperlink{classAnimal_ae3f640ffd5ebec66c3836b63fd11fc27}{speak()}} which is pure virtual. 
+
+\subsection{Constructor \& Destructor Documentation}
+\index{Animal@{Animal}!Animal@{Animal}}
+\index{Animal@{Animal}!Animal@{Animal}}
+\subsubsection[{\texorpdfstring{Animal(const unsigned int a, const double w)}{Animal(const unsigned int a, const double w)}}]{\setlength{\rightskip}{0pt plus 5cm}Animal\+::\+Animal (
+\begin{DoxyParamCaption}
+\item[{const unsigned int}]{a, }
+\item[{const double}]{w}
+\end{DoxyParamCaption}
+)}\hypertarget{classAnimal_aaf54366e9bfa8730f100fd25b99b864f}{}\label{classAnimal_aaf54366e9bfa8730f100fd25b99b864f}
+\hyperlink{classAnimal}{Animal} Constructor. Takes {\ttfamily a} for the age and {\ttfamily w} for the weight. \index{Animal@{Animal}!Animal@{Animal}}
+\index{Animal@{Animal}!Animal@{Animal}}
+\subsubsection[{\texorpdfstring{Animal()}{Animal()}}]{\setlength{\rightskip}{0pt plus 5cm}Animal\+::\+Animal (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classAnimal_a1e726a49ec952443190ac62dad22353c}{}\label{classAnimal_a1e726a49ec952443190ac62dad22353c}
+Deafult constructor. Set all attributes to zero. \index{Animal@{Animal}!````~Animal@{$\sim$\+Animal}}
+\index{````~Animal@{$\sim$\+Animal}!Animal@{Animal}}
+\subsubsection[{\texorpdfstring{$\sim$\+Animal()}{~Animal()}}]{\setlength{\rightskip}{0pt plus 5cm}virtual Animal\+::$\sim$\+Animal (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}\hypertarget{classAnimal_a16d8b7f94611cc65f5cdb58cc105527b}{}\label{classAnimal_a16d8b7f94611cc65f5cdb58cc105527b}
+Destructor. It does anything but is set virtual to ensure proper cleanup of the data that will be defined in the derived classes. 
+
+\subsection{Member Function Documentation}
+\index{Animal@{Animal}!info@{info}}
+\index{info@{info}!Animal@{Animal}}
+\subsubsection[{\texorpdfstring{info() const noexcept}{info() const noexcept}}]{\setlength{\rightskip}{0pt plus 5cm}void Animal\+::info (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [noexcept]}}\hypertarget{classAnimal_a72994a2bb769667d277845351462246f}{}\label{classAnimal_a72994a2bb769667d277845351462246f}
+print animal\textquotesingle{}s details 
+
+Reimplemented in \hyperlink{classSnake_a274887b6614bede92d3343c740f24206}{Snake}.
+
+\index{Animal@{Animal}!speak@{speak}}
+\index{speak@{speak}!Animal@{Animal}}
+\subsubsection[{\texorpdfstring{speak() const =0}{speak() const =0}}]{\setlength{\rightskip}{0pt plus 5cm}virtual void Animal\+::speak (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [pure virtual]}}\hypertarget{classAnimal_ae3f640ffd5ebec66c3836b63fd11fc27}{}\label{classAnimal_ae3f640ffd5ebec66c3836b63fd11fc27}
+print on stdout the animal\textquotesingle{}s call 
+
+Implemented in \hyperlink{classSnake_a70ce47696989febece8de5280fa28aa7}{Snake}, and \hyperlink{classDog_a51416c2bf93f9f0f9be5b31d0c4d0dc8}{Dog}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/animal.\+h\item 
+src/animal.\+cc\end{DoxyCompactItemize}
