@@ -1,3 +1,6 @@
+//we would like to not write by hand the smart way to sum N matrices
+// see accumulator and expression templates
+
 #include <iostream>
 #include <memory>  //smart pointers
 #include <ap_error.h>
@@ -139,6 +142,9 @@ std::ostream& operator<<(std::ostream& os, const Matrix<num>& m) {
   return os;
 }
 
+
+// this is much better, it uses much less memory
+// this is also faster than simple_matrix.cc
 template <typename num>
 Matrix<num> sumten(const Matrix<num>& m0,
                    const Matrix<num>& m1,
@@ -173,6 +179,8 @@ int main() {
     Matrix<double> m9(N, 10000);
     // Matrix<double> rh(N, 10000);
 
+//to check the time: namespace chrono
+// auto, if I dont know the type of the variable returned
     // const auto mm = m1 + m1 + m1 + m1 + m1 + m1 + m1 + m1 + m1;
     auto t1 = std::chrono::high_resolution_clock::now();
     // rh = m0 + m1 + m2 + m3 + m4 + m5 + m6 + m7 + m8 + m9;

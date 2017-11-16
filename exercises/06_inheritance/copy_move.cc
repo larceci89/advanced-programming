@@ -18,6 +18,14 @@ class Animal {
     std::cout << "age:\t" << age << '\n' << "weight:\t" << weight << '\n';
   }
 
+  Animal(const Animal& a) : Animal{a.age}, Animal{a.weight} {}
+//copy assignment in the parent class
+  Animal& operator=(const Animal& a){
+	age = a.age;
+	weight = a.weight;
+	return *this;
+  }
+
   virtual ~Animal() {}
 };
 
@@ -39,6 +47,17 @@ class Snake : public Animal {
     Animal::info();
     std::cout << "dangerous:\t" << (dangerous ? "true" : "false") << std::endl;
   }
+  Snake(const Snake& s) : Animal{a}, dangerous{s.dangerous} {}
+
+// copy_assignment --> function that returns a reference to the Snake element
+  Snake& operator=(const Snake& s){
+	//how to copy the Animal part: s1 = s2 is the same as calling s1.operator=(s2)
+	Animal::operator=(s);
+	dangerous = s.dangerous;
+	return *this;
+  }
+
+
   void speak() const noexcept override { std::cout << "ssss\n"; }
 };
 

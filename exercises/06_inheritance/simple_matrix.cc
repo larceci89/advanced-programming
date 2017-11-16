@@ -127,6 +127,8 @@ int main() {
     // const auto mm = m1 + m1 + m1 + m1 + m1 + m1 + m1 + m1 + m1;
     auto t1 = std::chrono::high_resolution_clock::now();
     Matrix<double> rh{m0 + m1 + m2 + m3 + m4 + m5 + m6 + m7 + m8 + m9};
+// this uses a lot of memory! Indeed, no temporary matrix is deleted before the scope is closed
+// there are a number of matrices equal to the number of +, before deleting.
     // Matrix<double> rh {m0 + m0 + m0 + m0 + m0 + m0 + m0 + m0 + m0 + m0};
 
     auto t2 = std::chrono::high_resolution_clock::now();

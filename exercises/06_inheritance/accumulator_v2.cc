@@ -1,3 +1,8 @@
+// we would like to avoid to do the first copy
+// use &&
+// but slower than the manually designed sum of N elements, that was heavy in memory
+// --> use expression templates
+
 #include <iostream>
 #include <memory>  //smart pointers
 #include <ap_error.h>

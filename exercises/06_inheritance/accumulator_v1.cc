@@ -1,3 +1,8 @@
+// std::forward understand if to use copy or move semantics
+// for the first sum, it creates a copy
+// in the next ones, it recognizes that the previous copy is an accumulator
+// so it just rewrites it
+
 #include <iostream>
 #include <memory>  //smart pointers
 #include <ap_error.h>
@@ -99,6 +104,7 @@ std::ostream& operator<<(std::ostream& os, const Matrix<num>& m) {
   return os;
 }
 
+// matrix sum function: note the std::forward
 template <typename num>
 Matrix<num> operator+(Matrix<num> l, const Matrix<num>& r) {
   // check dimensions
