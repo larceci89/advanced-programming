@@ -31,7 +31,7 @@ struct Dog {
   Dog(const unsigned int a, const double d) : _animal{a, d} {}
 };
 
-struct Snake : public Animal {
+struct Snake {
   Animal _animal;
   bool dangerous;
   Snake(const unsigned int a, const double w, const bool b)
